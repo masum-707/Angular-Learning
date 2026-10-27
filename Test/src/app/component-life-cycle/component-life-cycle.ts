@@ -76,6 +76,9 @@ export class ComponentLifeCycle implements OnChanges, OnInit, OnDestroy, AfterVi
   }
 
   password = '';
+  isTrue = true;
+  select = 'default';
+  inputRef = '';
 
   ngOnDestroy(): void {
     console.log(' Component destroyed');

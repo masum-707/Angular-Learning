@@ -16,5 +16,24 @@
     <h4>Email:{{ email }}</h4>
     <input type="text" placeholder="password" [(ngModel)]="password" />
     <p>Password:{{ password }}</p>
+    <label>
+      <input type="checkbox" [(ngModel)]="isTrue" />
+      checked
+    </label>
+    <p>display check :{{ isTrue }}</p>
+    <label>DropDown</label>
+    <select [(ngModel)]="select" for="Select">
+      <option value="1">Abc</option>
+      <option value="2">Bcd</option>
+      <option value="3">Cde</option>
+    </select>
+    <p>display selected value:{{ select }}</p>
+
+    <!-- #ref template  -->
+
+    <p>Input value using #ref</p>
+    <input type="text" #inputRef (input)="(inputRef)" />
+    <br />
+    <p>value:{{ inputRef.value }}</p>
   </div>
 </main>
