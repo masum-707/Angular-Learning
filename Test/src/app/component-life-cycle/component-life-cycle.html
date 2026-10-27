@@ -1,3 +1,20 @@
-<p>Name: {{ productName }}</p>
-<p>Price: {{ price }}</p>
-<input type="text" placeholder="Enter number" id="in101" />
+<main [style.background-color]="bg">
+  <div [class.card]="price > 1000">
+    <p>Name: {{ productName }}</p>
+    <p>Price: {{ price }}</p>
+    <button (click)="changePrice()">increasePrice</button><br /><br />
+    <button (click)="changeBg()">Change Bg</button>
+    <br /><br />
+    <input
+      type="text"
+      placeholder="Enter userName"
+      id="in101"
+      (input)="userName = $any($event.target).value"
+    />
+    <h4>Username:{{ userName }}</h4>
+    <input type="email" placeholder="enter email" (input)="getEmail($event)" />
+    <h4>Email:{{ email }}</h4>
+    <input type="text" placeholder="password" [(ngModel)]="password" />
+    <p>Password:{{ password }}</p>
+  </div>
+</main>
