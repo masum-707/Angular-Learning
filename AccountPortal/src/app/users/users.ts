@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, input, output, Output } from '@angular/core';
 
 @Component({
   selector: 'app-users',
@@ -10,7 +10,15 @@ export class Users {
   userList = [
     { id: 1, name: 'Masum' },
     { id: 2, name: 'Rahim' },
-    { id: 2, name: 'Karim' },
+    { id: 3, name: 'Karim' },
   ];
   // userList = [];
+
+  user = input('Masum');
+
+  // @Output() message = new EventEmitter<string>();
+  message = output<string>();
+  sendMessage() {
+    this.message.emit('This line from child Component using @Output');
+  }
 }

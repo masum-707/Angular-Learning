@@ -1,10 +1,13 @@
 <h2>Users List</h2>
 
 @for (user of userList; track user.id) {
-  <p>Position:{{ $index + 1 }}. {{ user }}</p>
+  <p>Position:{{ $index + 1 }}. {{ user.name }}</p>
   @if ($last) {
     Total users:{{ $count }}
   }
 } @empty {
   <h4>No users</h4>
 }
+
+<h2>Input user: {{ user() }}</h2>
+<button (click)="sendMessage()">Send message</button>

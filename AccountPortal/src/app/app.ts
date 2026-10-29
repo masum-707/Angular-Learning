@@ -11,4 +11,9 @@ import { Users } from './users/users';
 })
 export class App {
   protected readonly title = signal('AccountPortal');
+  inputData = 'This text insert from parent Class';
+  childData = '';
+  receivedChildData(data: string) {
+    this.childData = data;
+  }
 }
