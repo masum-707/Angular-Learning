@@ -1,1 +1,4 @@
 <p>r3 works!</p>
+<h4>Data from r4:{{ receivedR4 }}</h4>
+<app-r4 (valueR4)="inputData($event)"></app-r4>
+<app-l3 [valueR4]="receivedR4"></app-l3>

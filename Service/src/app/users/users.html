@@ -1,0 +1,15 @@
+<div>
+  <form>
+    <label for="user">User Name:</label>
+    <input type="text" #userName id="user" />
+    <button (click)="users.addUsers(userName.value)" type="reset">Add User</button>
+  </form>
+</div>
+<div class="card">
+  <h3>User component List-1</h3>
+  @for (user of userList; track user) {
+    <p>{{ $index + 1 }}. {{ user }}</p>
+  } @empty {
+    <h4>No users</h4>
+  }
+</div>

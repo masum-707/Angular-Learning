@@ -1,0 +1,8 @@
+<div class="card">
+  <h3>User component List-2</h3>
+  @for (user of users; track $index) {
+    <p>{{ $index + 1 }}. {{ user }}</p>
+  } @empty {
+    <h4>No Users</h4>
+  }
+</div>
