@@ -1,0 +1,8 @@
+<p>existing-user works!</p>
+@if (users$ | async; as res) {
+  @for (user of res.users; track $index) {
+    <p>{{ $index + 1 }}. {{ user.firstName }} {{ user.lastName }}</p>
+  } @empty {
+    <h1>No users</h1>
+  }
+}
