@@ -1,14 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule, ReactiveFormsModule],
   templateUrl: './registration.html',
   styleUrl: './registration.css',
 })
 export class Registration {
+  userName = new FormControl('Masum');
   isRegistrationPage = true;
   user = {
     firstName: '',

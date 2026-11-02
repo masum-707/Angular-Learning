@@ -9,7 +9,7 @@ justify-content: center;
 .card {
     padding: 20px;
     width: 320px;
-    height: 450px;
+    height: 550px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 15px 5px rgba(0, 0, 0, 0.1);
@@ -24,6 +24,9 @@ button{
     margin-right:10PX ;
     padding: 6px;
     border-radius: 5PX;
+    background-color: #0066cc;
+    color: #ffffff;
+    font-weight: 600;
     
 }
 
@@ -31,4 +34,10 @@ button{
  cursor: pointer;
  color: #0066cc; 
  font-weight: 600;
+}
+
+.error{
+color: red;
+margin-left: 90px;
+font-size:small;
 }

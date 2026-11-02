@@ -10,14 +10,31 @@
       <h2>Login Page</h2>
       <p>Please fill out the following information correctly to Login.</p>
     }
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" #myform="ngForm">
       @if (isRegistrationPage) {
         <div>
           <label for="firstName">First name: </label>
-          <input type="text" name="firstName" [(ngModel)]="user.firstName" required />
+          <input
+            type="text"
+            name="firstName"
+            [(ngModel)]="user.firstName"
+            #touchCheck="ngModel"
+            #firstName="ngModel"
+            required
+          />
+          @if (firstName.invalid && firstName.touched) {
+            <p class="error">Firs name required</p>
+          }
+          <!-- <p>
+            Touched Check:{{ touchCheck.touched }} & if user value change,
+            @if (touchCheck.dirty) {
+              input value:{{ user.firstName }}
+            }
+          </p> -->
           <br /><br />
           <label for="lastName">Last name: </label>
-          <input type="text" name="lastName" [(ngModel)]="user.lastName" required />
+          <input type="text" name="lastName" [formControl]="userName" required />
+          <!-- [(ngModel)]="user.lastName" -->
           <br /><br />
           <label for="gender">Gender: </label>
           <select name="gender" [(ngModel)]="user.gender" required>
@@ -45,9 +62,12 @@
             required
             #ref_password
             autocomplete="new-password"
+            minlength="5"
+            #password="ngModel"
           />
+          <p>{{ password.errors?.['minlength'] | json }}</p>
           <br /><br />
-          <button type="submit">Submit</button>
+          <button type="submit" [disabled]="myform.invalid">Submit</button>
           <button type="reset">Reset</button>
         </div>
       } @else {
@@ -70,7 +90,7 @@
           autocomplete="current-password"
         />
         <br /><br />
-        <button type="submit">Login</button>
+        <button type="submit" [disabled]="myform.invalid">Login</button>
       }
     </form>
     @if (isRegistrationPage) {
