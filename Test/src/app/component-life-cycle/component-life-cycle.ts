@@ -1,4 +1,13 @@
-import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges, Input } from '@angular/core';
+import { ApiService } from './../Service/api-service';
+import {
+  Component,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+  Input,
+  inject,
+} from '@angular/core';
 
 @Component({
   selector: 'app-component-life-cycle',
@@ -9,6 +18,8 @@ import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges, Input } from '@
 export class ComponentLifeCycle implements OnChanges, OnInit, OnDestroy {
   @Input({ required: true }) productName: string = '';
   @Input() price = 1000;
+
+  apiService = inject(ApiService);
   constructor() {
     console.log('1. Constructor called');
   }
@@ -30,6 +41,7 @@ export class ComponentLifeCycle implements OnChanges, OnInit, OnDestroy {
     console.log(this.productName);
     console.log(this.price);
     // this.changeValue();
+    this.apiService.getPost();
   }
 
   ngOnDestroy(): void {
