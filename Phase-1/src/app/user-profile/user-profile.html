@@ -1,0 +1,16 @@
+<h1>user-profile works!</h1>
+<h2 [textContent]="student.userName"></h2>
+<h3>User Name:{{ student.userName }}</h3>
+<h4>Email:{{ student.email }}</h4>
+<h4>Role:{{ student.role }}</h4>
+<h4>Mark:{{ student.mark }}</h4>
+<h4>
+  Passed status using property binding<span
+    [textContent]="student.mark >= 90 ? 'YES' : 'NO'"
+  ></span>
+</h4>
+<h4>Passed:{{ student.mark >= 50 ? 'YES' : 'NO' }}</h4>
+<p>{{ isEligible() }}</p>
+<p>Total mark after change:{{ changeMark(20) }}</p>
+<button (click)="changeName()">change name</button>
+<h1>XYZ:{{ student?.xyz }}</h1>

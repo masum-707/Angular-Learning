@@ -1,0 +1,16 @@
+# Dependencies
+**/node_modules/
+
+# Angular build and generated output
+**/.angular/
+**/dist/
+**/tmp/
+**/out-tsc/
+
+# IDE settings
+**/.vscode/settings.json
+.history/
+
+# System and local files
+Thumbs.db
+.DS_Store

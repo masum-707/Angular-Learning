@@ -1,0 +1,9 @@
+<button (click)="getPost()">Load Posts</button>
+
+@if (loadingService.isLoading()) {
+  <p>Loading posts...</p>
+}
+
+@for (post of posts;track $index) {
+  <p>{{ post.title  }}</p>
+}
