@@ -12,14 +12,17 @@ import { ApiService } from "../Service/api-service";
 export class Post {
   loadingService = inject(LoadingService);
   apiService = inject(ApiService);
-   posts: any[] = [];
+  posts: any[] = [];
+  errorMessage = '';
 
   getPost() {
-     this.apiService.getPost().subscribe((data) => {
-      this.posts = data as any[];
+    this.apiService.getPost().subscribe({
+      next: (data: any) => {
+        this.posts = data;
+      },
+      error: (error) => {
+        this.errorMessage = error.message;
+      },
     });
   }
-  
-
-  
 }

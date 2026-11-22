@@ -4,6 +4,13 @@
   <p>Loading posts...</p>
 }
 
+@if(errorMessage){
+<div style="align-items: center;background-color: red;color: white;">
+    <h1>{{errorMessage}}</h1>
+</div>
+}
+
+
 @for (post of posts;track $index) {
   <p>{{ post.title  }}</p>
 }

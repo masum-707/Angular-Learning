@@ -9,7 +9,7 @@ export class ApiService {
   apiService = inject(HttpClient);
 
   getPost() {
-    return this.apiService.get('https://jsonplaceholder.typicode.com/posts', {
+    return this.apiService.get('https://jsonplaceholder.typicode.com/posttt', {
       context: new HttpContext().set(SKIP_AUTH, true),
     });
     //   .subscribe({
